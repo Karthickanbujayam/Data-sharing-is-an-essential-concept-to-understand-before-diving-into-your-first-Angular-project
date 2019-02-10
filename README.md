@@ -157,7 +157,8 @@ This code will work in Angular on the web, so why is it a bad practice? Angular 
 # 6. Smart vs Dumb Components (Container vs Presentational)
 One of the most common component patters in Angular is the smart-dumb pattern - aka Container vs Presentational or Stateful vs Stateless. In a more general sense, it is just a separation of concerns to keep our code predictible.
 Your smart components are concered with how the code works, while the dumb component deals with how it looks.
-7. Lifecycle Hooks
+
+# 7. Lifecycle Hooks
 Just like us humans, components have a lifecyle. They are created, things change, then they’re destroyed. You can hook into these lifecycle events, which are commonly used to run setup and teardown code.
 By far the most common Lifecycle hook is ngOnInit which happens after the class is instantiated and the data-bound properties have been checked. You use this hook perform any logic needed right away, like fetching data with HTTP calls, form setup, property definitions, and stuff like that.
 constructor() {
