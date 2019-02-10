@@ -64,6 +64,7 @@ Directives allow you to extend HTML elements with custom attributes. Angular com
 •	*ngFor - Repeats elements by looping over an array of data.
 •	ngClass - Applies CSS classes conditionally
 •	ngStyle - Applies styles conditionally
+
 Structural directives start with a * and can determine which elements are rendered in the DOM.
 <!-- Conditional -->
 <div *ngIf="clicked">Clicked!</div>
@@ -73,12 +74,15 @@ Structural directives start with a * and can determine which elements are render
   {{ boat.name }}
 </div>
 Other built-in directives can do things like apply conditional CSS classes. The left side contains a CSS class, which will be applied when the right side evaluates to true.
+
 <h3 [ngClass]="{
   'green': boat.name === 'Starfire',
   'red'  : boat.name === 'Oracle'  
 }">
 
-But you can also build your own. A custom directive in Angular is just a component minus the HTML/CSS. Instead of creating its own template, the directive becomes it’s own custom attribute that attaches to a host element. Let’s say we want a directive that magnifies an image when hovered.
+But you can also build your own. A custom directive in Angular is just a component minus the HTML/CSS. Instead of creating its own template, the directive becomes it’s own custom attribute that attaches to a host element. 
+
+Let’s say we want a directive that magnifies an image when hovered.
 
 When should you use a directive over a component? Simple… If you don’t need to customize the HTML structure you probably want a directive.
 
