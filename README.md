@@ -83,19 +83,30 @@ ng g directive maginfier
 import { Directive, HostBinding, HostListener } from '@angular/core';
 
 @Directive({
+
   selector: '[magnifier]'
+  
 })
+
 export class MagnifierDirective {
+
   // The image's width property
+  
   @HostBinding('width') width = 200;
 
   // Fires when the user hovers
+  
   @HostListener('mouseenter', ['$event'])
+  
   onHover(e) {
+  
     this.width = 300;
+    
   }
+  
 }
 Now to can apply it to any element in the HTML and it will increse width from 200px to 300.
+
 <img [src]="imgURL" magnifier>
 
 # 4. Pipes
@@ -109,11 +120,17 @@ ng g pipe camelCase
 import { camelCase } from 'lodash';
 
 @Pipe({name: 'camelCase'})
+
 export class CamelCasePipe implements PipeTransform {
+
   transform(value: string): string {
+  
     return camelCase(value)
+    
   }
+  
 }
+
 {{ 'Foo Bar Baz' | camelCase }}
 
 <!-- fooBarBaz -->
@@ -167,13 +184,19 @@ This allows us to pass data into the component:
 
 We can emit custom events in a component using Output and EventEmitter. Here is a trivial example of event emitting on mouseenter.
 export class MyComponent {
+
   @Output() hovered = new EventEmitter();
 
   @HostListener('mouseenter', ['$event'])
+  
   onHover(e) {
+  
     this.hovered.emit('howdy')
+    
   }
+  
 }
+
 We can then listen to the custom event on the component:
 <my-component (hovered)="doSomething()"></my-component>
 
