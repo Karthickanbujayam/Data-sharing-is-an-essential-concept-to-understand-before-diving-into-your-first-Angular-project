@@ -77,9 +77,13 @@ Other built-in directives can do things like apply conditional CSS classes. The 
   'green': boat.name === 'Starfire',
   'red'  : boat.name === 'Oracle'  
 }">
+
 But you can also build your own. A custom directive in Angular is just a component minus the HTML/CSS. Instead of creating its own template, the directive becomes it’s own custom attribute that attaches to a host element. Let’s say we want a directive that magnifies an image when hovered.
+
 When should you use a directive over a component? Simple… If you don’t need to customize the HTML structure you probably want a directive.
+
 ng g directive maginfier
+
 import { Directive, HostBinding, HostListener } from '@angular/core';
 
 @Directive({
@@ -117,6 +121,7 @@ Let’s say you want to round an interpolated value:
 The number will be rendered as 23.232.
 You can build your own pipes to easily format interpolated values. Let’s say we need to make sure that a user’s input is in camelCase.
 ng g pipe camelCase
+
 import { camelCase } from 'lodash';
 
 @Pipe({name: 'camelCase'})
